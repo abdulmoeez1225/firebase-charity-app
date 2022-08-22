@@ -1,0 +1,51 @@
+.main-header{
+    position: fixed !important;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(0,0,0,0.5) !important;
+    z-index: 999;
+    color: #fff;
+    padding-top: 15px !important;
+    padding-bottom: 15px !important;
+    .navbar-brand{
+        cursor: pointer;
+        img{
+            width: 220px;
+        }
+    }
+    .navbar-nav{
+        .nav-link{
+            color: #ABABAB;
+            margin: 0 10px;
+            border: 2px solid transparent;
+            padding: 8px 22px !important;
+            border-radius: 40px;
+            font-size: 18px;
+            &:hover{
+                color: #333333;
+                background-color: #fff;
+                border-color: #333333;
+            }
+            &.active{
+                background-color: #15C8A0;
+                color: #fff;
+                border-color: #fff;
+            }
+        }
+        &.social-icons{
+            min-width: 220px;
+            justify-content: flex-end;
+            .nav-link{
+                padding: 5px 10px !important;
+                margin: 0px;
+                color: #fff;
+                &:hover{
+                    color: #15c8a0;
+                    background-color: transparent;
+                    border-color: transparent;
+                }
+            }
+        }
+    }
+}

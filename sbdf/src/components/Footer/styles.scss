@@ -1,0 +1,19 @@
+.main-footer{
+    border-top: 1px solid rgba($color: #fff, $alpha: 0.5);
+    font-size: 14px;
+    padding-top: 16px;
+    padding-bottom: 16px;
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    font-family: 'Arial Rounded MT';
+    font-weight: bold;
+    color: #FFFFFF;
+    .footer-email{
+        text-align: right;
+        a{
+            color: #F0F0F0;
+            text-decoration: none;
+        }
+    }
+}

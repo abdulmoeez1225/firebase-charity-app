@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Button, Form, Modal } from 'react-bootstrap'
+import { Button, Form } from 'react-bootstrap'
 import { IoLocationOutline, IoMailOutline, IoCallOutline, IoAlarmOutline } from "react-icons/io5";
 import { FaRegUser , FaRegEnvelope, FaRegEnvelopeOpen, FaRegArrowAltCircleRight } from "react-icons/fa";
 import Header from '../../components/Header';
@@ -17,12 +17,9 @@ import arrowDown from '../../assets/arrow-down.svg'
 import { Formik } from 'formik';
 
 const Contact = () => {
-
-    const [modal, setModal] = useState(false);
-
     const schema =  yup.object().shape({
         yourName: yup.string().required(),
-        email: yup.string().email(),
+        email: yup.string().required(),
         message: yup.string().required()
     })
     const initialValues = {
@@ -30,27 +27,6 @@ const Contact = () => {
         email: '',
         message: '',
     }
-
-    const MessageModal = () => (
-        <Modal
-            size="lg"
-            show={modal}
-            onHide={() => setModal(false)}
-            aria-labelledby="example-modal-sizes-title-sm"
-        >
-            <Modal.Header closeButton>
-                <Modal.Title id="example-modal-sizes-title-sm">
-                    Message Sent
-                </Modal.Title>
-            </Modal.Header>
-            <Modal.Body>
-                    Your query sent successfully, we will contact you soon!
-            </Modal.Body>
-            <Modal.Footer>
-                    <Button onClick={() => setModal(false)} variant="secondary">Close</Button>
-                </Modal.Footer>
-        </Modal>
-    )
 
   return (
     <>
@@ -106,6 +82,8 @@ const Contact = () => {
                                             values,
                                             errors,
                                             touched,
+                                            setErrors,
+                                            validateForm
                                         }) => {
                                             console.log('values, errors, touched: ', values,
                                                 errors,
@@ -118,37 +96,28 @@ const Contact = () => {
                                                         message: values.message
                                                     }
                                                     set(ref(db, 'messages/' + userId), data);
-                                                    setModal(true);
                                                 }
                                             return (
                                                 <Form>
                                                 <Form.Group className="fd-form-field" controlId="yourName">
-                                                    <Form.Control value={values.yourName} isInvalid={errors.yourName && touched.yourName} onBlur={handleBlur} onChange={(e) => setFieldValue('yourName', e.target.value)} type="text" placeholder="Your Name" />
+                                                    <Form.Control value={values.yourName} onBlur={handleBlur} onChange={(e) => setFieldValue('yourName', e.target.value)} type="text" placeholder="Your Name" />
                                                     <div className="input-icon"><FaRegUser/></div>
-                                                <Form.Control.Feedback type="invalid">
-                                                                            {errors.yourName}
-                                                                        </Form.Control.Feedback>
                                                 </Form.Group>
+                                                
                                                 <Form.Group className="fd-form-field" controlId="email">
-                                                    <Form.Control type="email" value={values.email} isInvalid={errors.email && touched.email} onBlur={handleBlur} onChange={(e) => setFieldValue('email', e.target.value)} className="text" placeholder="Email Address" />
+                                                    <Form.Control type="email" value={values.email} onBlur={handleBlur} onChange={(e) => setFieldValue('email', e.target.value)} className="text" placeholder="Email Address" />
                                                     <div className="input-icon"><FaRegEnvelope/></div>
-                                                    <Form.Control.Feedback type="invalid">
-                                                                            {errors.email}
-                                                                        </Form.Control.Feedback>
                                                 </Form.Group>
                                                 <Form.Group className="fd-form-field" controlId="message">
-                                                    <Form.Control type="text-area" value={values.message} isInvalid={errors.message && touched.message} onBlur={handleBlur} onChange={(e) => setFieldValue('message', e.target.value)} rows={4}  placeholder="Message" />
+                                                    <Form.Control type="text-area" value={values.message} onBlur={handleBlur} onChange={(e) => setFieldValue('message', e.target.value)} rows={4}  placeholder="Message" />
                                                     <div className="input-icon"><FaRegEnvelopeOpen/></div>
-                                                    <Form.Control.Feedback type="invalid">
-                                                                            {errors.message}
-                                                                        </Form.Control.Feedback>
                                                 </Form.Group>
                                                 <div className="row mt-4">
                                                     <div className="col-md-8">
                                                         {/* Captcha will go here */}
                                                     </div>
                                                     <div className="col-md-4 d-flex justify-content-end">
-                                                        <Button type={'submit'} variant="success" disabled={!values.email || !values.message || !values.yourName || (errors.yourName || errors.email || errors.message)} onClick={(e) => sendMessage(e)} className="main-btn contact-main-btn"><FaRegArrowAltCircleRight className="SvgIcon noColor"/>Send Message</Button>
+                                                        <Button type={'submit'} variant="success" disabled={!values.email || !values.message || !values.yourName} onClick={(e) => sendMessage(e)} className="main-btn contact-main-btn"><FaRegArrowAltCircleRight className="SvgIcon noColor"/>Send Message</Button>
                                                     </div>
                                                 </div>
                                             </Form>
@@ -158,7 +127,6 @@ const Contact = () => {
                 </div>
                 </div>
             </div>
-            {MessageModal()}
         <Footer/>
         </div>
     </>

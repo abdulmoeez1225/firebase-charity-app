@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { Button, Card, Tab, Tabs, Dropdown, Form, Row, Col, Carousel, Modal, Toast, ToastContainer } from 'react-bootstrap'
+import { Button, Card, Tab, Tabs, Dropdown, Form, Row, Col, Carousel, Modal,Toast,ToastContainer } from 'react-bootstrap'
 import { FaRegHeart, FaRegArrowAltCircleRight, FaRegUser, FaRegEnvelope, FaRegClipboard } from "react-icons/fa";
 import { ref, set, update, onValue } from "firebase/database";
 import { BsArrowDownUp, BsTelephone } from "react-icons/bs";
@@ -85,26 +85,26 @@ const Home = () => {
 
     const renderToast = () => {
         <div
-            aria-live="polite"
-            aria-atomic="true"
-            className="bg-dark position-relative"
-            style={{ minHeight: '240px' }}
-        >
-            <ToastContainer className="p-3" position={position}>
-                <Toast>
-                    <Toast.Header closeButton={false}>
-                        <img
-                            src="holder.js/20x20?text=%20"
-                            className="rounded me-2"
-                            alt=""
-                        />
-                        <strong className="me-auto">Bootstrap</strong>
-                        <small>11 mins ago</small>
-                    </Toast.Header>
-                    <Toast.Body>Hello, world! This is a toast message.</Toast.Body>
-                </Toast>
-            </ToastContainer>
-        </div>
+        aria-live="polite"
+        aria-atomic="true"
+        className="bg-dark position-relative"
+        style={{ minHeight: '240px' }}
+      >
+        <ToastContainer className="p-3" position={position}>
+          <Toast>
+            <Toast.Header closeButton={false}>
+              <img
+                src="holder.js/20x20?text=%20"
+                className="rounded me-2"
+                alt=""
+              />
+              <strong className="me-auto">Bootstrap</strong>
+              <small>11 mins ago</small>
+            </Toast.Header>
+            <Toast.Body>Hello, world! This is a toast message.</Toast.Body>
+          </Toast>
+        </ToastContainer>
+      </div>
     }
 
     const initialValues = {
@@ -124,18 +124,17 @@ const Home = () => {
         email: yup.string().email(),
         telephone: yup.number().required()
     });
-    
     const saveDonation = (e,data, donationAmount) => {
-        var amount;
         e.preventDefault();
-        const getTotalDonation = ref(db, 'TotalDonation');
-        onValue(getTotalDonation, (snapshot) => {
-            amount = snapshot.val();
-            console.log(amount)
-            console.log(Number(amount) + Number(donationAmount))
-        })
         set(ref(db, 'donaters/' + userId), data);
-        set(ref(db, 'TotalDonation/'),  (Number(amount) + Number(donationAmount)));
+        // var amount;
+        // const getTotalDonation = ref(db, 'TotalDonation');
+        // onValue(getTotalDonation, (snapshot) => {
+        //     amount = snapshot.val();
+        //     console.log(amount)
+        //     console.log(Number(amount) + Number(donationAmount))
+            // update(ref(db, 'TotalDonation/'), {TotalDonation: Number(amount) + Number(donationAmount)});
+        // })
         // var TotalDonation = db.ref('');
         // set(ref(db, 'donaters/TotalDonation'), {TotalDonation: Number(donationAmount)});
         // ref(db,'donaters/TotalDonation')
@@ -235,7 +234,7 @@ const Home = () => {
                                             const resetErrors = () => {
                                                 setTimeout(() => setErrors({}), 500);
                                             };
-
+                                            
                                             const donateAnonymously = () => {
                                                 setFieldValue('firstName', '');
                                                 setFieldValue('lastName', '');
@@ -265,7 +264,7 @@ const Home = () => {
                                                         chainId: '0x4'
                                                     };
 
-                                                    await ethereum.request({
+                                                 await ethereum.request({
                                                         method: 'wallet_switchEthereumChain',
                                                         params: [{
                                                             "chainId": "0x4"
@@ -279,14 +278,14 @@ const Home = () => {
                                                             console.log('success: ', result);
                                                             setThanksModal(true);
                                                         }).catch((error) => {
-                                                            alert('User denied transaction signature.');
-                                                            console.log('if transaction fail', error)
-                                                        });
-
+                                                                alert('User denied transaction signature.');
+                                                                console.log('if transaction fail', error)
+                                                            });
+                                                       
                                                     });
 
 
-
+                                               
                                                 } catch (error) {
                                                     console.log(error)
                                                 }
@@ -337,7 +336,7 @@ const Home = () => {
                                             useEffect(() => {
                                                 validateForm();
                                             }, []);
-
+                                            
                                             useEffect(() => {
                                                 if (disableInputs) {
                                                     resetErrors();
@@ -458,7 +457,7 @@ const Home = () => {
                                                                 <div className="wallet-address">
                                                                     <h5>Use the address below to donate {values.donationAmount} {values.selectCrypto} from your wallet.</h5>
                                                                     <div className="address-bar">
-                                                                        <span>{values.selectCrypto === "ETH" ? treasuryAddress : btcTreasuryAddress}</span>
+                                                                        <span>{values.selectCrypto === "ETH" ? treasuryAddress: btcTreasuryAddress}</span>
                                                                         <button type="button" onClick={() => copyData()}>
                                                                             <FaRegClipboard />
                                                                         </button>
@@ -469,7 +468,7 @@ const Home = () => {
                                                                             <QRCode size={73} value={treasuryAddress || ''} />
                                                                         </div>
                                                                     </div>
-                                                                    <Button className="fd-form-btn fd-form-secondary" disabled={values.selectCrypto === 'BTC'} onClick={() => connectMetamask()}>Transact with Metamask</Button>
+                                                                    <Button className="fd-form-btn fd-form-secondary" disabled={values.selectCrypto==='BTC'} onClick={() => connectMetamask()}>Transact with Metamask</Button>
                                                                     <p>Please note that your donation will clear even if you donate a different amount than you pledged.</p>
                                                                     <Row style={{ marginTop: "20px" }}>
                                                                         <Col className="pe-2"><Button onClick={() => setActiveTab('information')} className="fd-form-btn fd-form-secondary">Previous</Button></Col>
