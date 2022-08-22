@@ -1,0 +1,122 @@
+.content-page-bg{
+    background-color: #292929;
+}
+.page-cover{
+    min-height: 340px;
+    background-image: url('../../assets/images/background.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    color: #fff;
+    padding-top: 100px;
+    .section-arrow{
+        position: absolute;
+        left: calc(50% - 15px);
+        bottom: -15px;
+        width: 30px;
+        height: 30px;
+        z-index: 10;
+        padding: 0 !important;
+    }
+    &::after{
+        content: '';
+        width: 100%;
+        height: 100%;
+        background-color: rgba($color: #000, $alpha: 0.74);
+        z-index: 0;
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+    .cover-content{
+        position: relative;
+        z-index: 3;
+        h3{ 
+          font-family: 'Edu NSW ACT Foundation';
+          font-size: 30px;
+          margin-bottom: 13px;
+          position: relative;
+          &::before{
+            content: '';
+            position: absolute;
+            bottom: 10px;
+            left: -15px;
+            width: calc(100% + 30px);
+            height: 5px;
+            background-color: #15C8A0;
+            z-index: -1;
+          }
+        }
+        h2{
+          font-size: 36px;
+          font-family: 'Arial Rounded MT';
+          margin-bottom: 11px;
+        }
+    }
+}
+.content-section{
+    min-height: calc(100vh - 394px);
+    color: #fff;
+    padding-top: 72px;
+    padding-bottom: 60px;
+    .main-btn{
+        padding: 10px 26px 10px 10px !important;
+        .SvgIcon{
+            font-size: 28px;
+        }
+    }
+    h2{
+        font-size: 36px;
+        font-family: 'Arial Rounded MT';
+        color: #15C8A0;
+        margin-bottom: 15px;
+    }
+    .about-founder{
+        display: flex;
+        .founder-image{
+            min-width: 170px;
+            margin-right: 30px;
+            position: relative;
+            height: 100%;
+            &::before{
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-color: rgba($color: #ABABAB, $alpha: 0.2);
+                transform: rotate(3deg);
+                border-radius: 8px;
+                z-index: 0;
+            }
+            img{
+                width: 100%;
+                height: auto;
+                border-radius: 8px;
+                position: relative;
+                z-index: 1;
+            }
+        }
+    }
+    ul{
+        list-style: none;
+        padding: 0;
+        li{
+            position: relative;
+            &::before {
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 0;
+                height: 100%;
+                aspect-ratio: 1/1;
+                background: url('../../assets/checkmark-green.svg') no-repeat;
+                background-size: 80%;
+                background-position: center;
+            }
+            padding-left: 36px;
+        }
+    }
+}

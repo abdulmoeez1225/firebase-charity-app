@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="60.732" height="61" viewBox="0 0 60.732 61">
+  <g id="teamwork" transform="translate(0 0.495)">
+    <g id="Group_112" data-name="Group 112" transform="translate(22.839 -0.495)">
+      <g id="Group_111" data-name="Group 111" transform="translate(0 0)">
+        <ellipse id="Ellipse_10" data-name="Ellipse 10" cx="7.524" cy="7.793" rx="7.524" ry="7.793" fill="#fff"/>
+      </g>
+    </g>
+    <g id="Group_114" data-name="Group 114" transform="translate(18.978 18.752)">
+      <g id="Group_113" data-name="Group 113">
+        <path id="Path_57" data-name="Path 57" d="M182.759,176.843l-1.723-13.422A3.781,3.781,0,0,0,177.263,160h-2.08a1.911,1.911,0,0,0-1.344.554l-2.452,2.452-2.452-2.452a1.912,1.912,0,0,0-1.344-.554h-2.076a3.772,3.772,0,0,0-3.773,3.367l-1.727,13.475a1.9,1.9,0,0,0,1.883,2.137h2.05l1.587,19.358a3.782,3.782,0,0,0,3.777,3.416h4.156a3.794,3.794,0,0,0,3.781-3.45l1.583-19.324h2.046a1.893,1.893,0,0,0,1.423-.645A1.87,1.87,0,0,0,182.759,176.843Z" transform="translate(-160 -160.005)" fill="#fff"/>
+      </g>
+    </g>
+    <g id="Group_116" data-name="Group 116" transform="translate(41.649 -0.495)">
+      <g id="Group_115" data-name="Group 115" transform="translate(0 0)">
+        <ellipse id="Ellipse_11" data-name="Ellipse 11" cx="7.524" cy="7.793" rx="7.524" ry="7.793" fill="#fff"/>
+      </g>
+    </g>
+    <g id="Group_118" data-name="Group 118" transform="translate(3.795 -0.226)">
+      <g id="Group_117" data-name="Group 117" transform="translate(0 0)">
+        <path id="Path_58" data-name="Path 58" d="M39.59,0A7.591,7.591,0,1,0,47.182,7.6,7.6,7.6,0,0,0,39.59,0Z" transform="translate(-31.999 -0.005)" fill="#fff"/>
+      </g>
+    </g>
+    <g id="Group_120" data-name="Group 120" transform="translate(42.234 18.752)">
+      <g id="Group_119" data-name="Group 119">
+        <path id="Path_59" data-name="Path 59" d="M374.544,176.843l-1.723-13.418a3.779,3.779,0,0,0-3.773-3.42h-2.08a1.911,1.911,0,0,0-1.344.554l-2.452,2.452-2.452-2.452a1.909,1.909,0,0,0-1.34-.554H357.3a3.618,3.618,0,0,0-.672.125,7.387,7.387,0,0,1,.987,2.854l1.719,13.376a5.68,5.68,0,0,1-1.389,4.5,5.5,5.5,0,0,1-1.883,1.336l1.26,12.347a3.782,3.782,0,0,0,3.777,3.416h4.156a3.794,3.794,0,0,0,3.781-3.45l1.579-15.528h2.046a1.893,1.893,0,0,0,1.423-.645A1.869,1.869,0,0,0,374.544,176.843Z" transform="translate(-356.063 -160.005)" fill="#fff"/>
+      </g>
+    </g>
+    <g id="Group_122" data-name="Group 122" transform="translate(-0.001 18.752)">
+      <g id="Group_121" data-name="Group 121" transform="translate(0)">
+        <path id="Path_60" data-name="Path 60" d="M16.6,180.843a5.685,5.685,0,0,1-1.374-4.475l1.727-13.479a7.017,7.017,0,0,1,.945-2.763,3.57,3.57,0,0,0-.638-.121h-2.08a1.912,1.912,0,0,0-1.344.554l-2.452,2.452-2.452-2.452A1.909,1.909,0,0,0,7.595,160H5.514a3.772,3.772,0,0,0-3.773,3.367L.014,176.846A1.9,1.9,0,0,0,1.9,178.983h2.05l1.587,15.562a3.782,3.782,0,0,0,3.777,3.416h4.156a3.794,3.794,0,0,0,3.781-3.45l1.26-12.317A5.692,5.692,0,0,1,16.6,180.843Z" transform="translate(0.001 -160.005)" fill="#fff"/>
+      </g>
+    </g>
+  </g>
+</svg>
