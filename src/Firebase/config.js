@@ -8,13 +8,14 @@ import { getDatabase } from "firebase/database";
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
-  apiKey: "AIzaSyCeWsB7IcszSmkASOfq6NGmiCC7ngzDXko",
-  authDomain: "crypto-donation-app.firebaseapp.com",
-  projectId: "crypto-donation-app",
-  storageBucket: "crypto-donation-app.appspot.com",
-  messagingSenderId: "978594363578",
-  appId: "1:978594363578:web:46f739a5f56e5f8802ea83",
-  measurementId: "G-WV9QQW7T59"
+  apiKey: "AIzaSyAxHtP6NSqlTnhg469uvx2bSBnkdE7kIbc",
+  authDomain: "charity-donation-aebf0.firebaseapp.com",
+  databaseURL: "https://charity-donation-aebf0-default-rtdb.firebaseio.com",
+  projectId: "charity-donation-aebf0",
+  storageBucket: "charity-donation-aebf0.appspot.com",
+  messagingSenderId: "760422524932",
+  appId: "1:760422524932:web:755b9cab1c19ff84386d51",
+  measurementId: "G-DMM03X2FPK"
 };
 
 // Initialize Firebase
