@@ -308,10 +308,8 @@ const Home = () => {
 
                                             const getTreasury = () => {
                                                 const treasuryAddress = ref(db, 'Treasury');
-                                                debugger
                                                 console.log("treasuryAddress",treasuryAddress)
                                                 onValue(treasuryAddress, (snapshot) => {
-                                                    debugger
                                                     const data = snapshot.val();
                                                     setTreasuryAddress(data);
                                                 });
