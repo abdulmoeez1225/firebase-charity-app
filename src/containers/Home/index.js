@@ -262,13 +262,13 @@ const Home = () => {
                                                         to: treasuryAddress,
                                                         from: ethereum.selectedAddress,
                                                         value: Number(values.donationAmount * 1e18).toString(16),
-                                                        chainId: '0x4'
+                                                        chainId: '0x5'
                                                     };
 
                                                     await ethereum.request({
                                                         method: 'wallet_switchEthereumChain',
                                                         params: [{
-                                                            "chainId": "0x4"
+                                                            "chainId": "0x5"
                                                         }],
                                                     }).then(async (result) => {
 
